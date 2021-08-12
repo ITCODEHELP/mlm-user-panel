@@ -1,0 +1,50 @@
+<h1 id="title" class="title">Login</h1>
+<p class="sub-title">Hello! Log in with your Mobile Number.</p>
+<p>mobileno: 1234567890
+  password: Sidhdhapura</p>
+
+<form [formGroup]="addData" (ngSubmit)="login()" #form="ngForm" aria-labelledby="title">
+
+  <div class="form-control-group">
+    <label class="label" for="input-mobile">Mobile Number:</label>
+    <input nbInput
+           fullWidth
+           name="mobile"
+           formControlName="phone"
+           placeholder="Mobile Number"
+           fieldSize="large"
+           required
+           autofocus>
+  </div>
+
+  <div class="form-control-group">
+    <span class="label-with-link">
+      <label class="label" for="input-password">Password:</label>
+    </span>
+    <input nbInput
+           fullWidth
+           required
+           name="password"
+           formControlName="password"
+           type="password"
+           placeholder="Password"
+           fieldSize="large">
+  </div>
+
+<br>
+  <button nbButton
+          fullWidth
+          status="primary"
+          size="large"
+          [disabled]="submitted || !form.valid"
+          [class.btn-pulse]="submitted">
+    Log In
+  </button>
+</form>
+
+<section class="another-action" aria-label="Register">
+  Don't have an account? <a class="text-link" routerLink="../signup">Register</a>
+</section>
+
+
+

@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-xs-12">
+        <section class="hk-sec-wrapper shadow">
+            <h2 class="mb-40">Bank Details :</h2>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="">
+                        <div class="dropify-message">
+                            <input type="file" (change)="selectFile($event)" name="goolge_pay_photo" id="googlpay_front_id" class="dropify-wrapper"
+                                style="padding: 50px;width: 43%;margin-bottom: 10px;">
+                            <p>Upload Image of Your upi App, Passbook,Cheque image </p>
+                            <div class="row mt-2" *ngIf="progressshow">
+                                <div class="col-12">
+                                    <nb-progress-bar [value]="percentage" status="success">{{ percentage }}%</nb-progress-bar>
+                                </div>
+                            </div>
+                            <div class="">
+                                <button  class="rounded m-1 shadow" [disabled]="!selectedFiles" (click)="upload()" nbButton status="success">Upload</button>
+                                <button class="rounded m-1 shadow" nbButton status="primary">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

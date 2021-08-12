@@ -1,0 +1,22 @@
+<h2>User History</h2>
+<div class="table-responsive">
+  <table id="users" class="table rounded border shadow bg-white">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Plan Type</th>
+        <th>Phone</th>
+        <th>Date</th>
+      </tr>
+
+      <tr *ngFor="let row of historyData">
+        <td>{{ row._id }}</td>
+        <td>{{ row.name }}</td>
+        <td>{{ row.plan_type }}</td>
+        <td>{{ row.phone }}</td>
+        <td>{{ row.join_date | date: "dd-MM-yy" }}</td>
+      </tr>
+    </thead>
+  </table>
+</div>

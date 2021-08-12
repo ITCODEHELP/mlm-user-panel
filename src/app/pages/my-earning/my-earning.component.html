@@ -1,0 +1,73 @@
+<h2 *ngIf="!addedProduct">Plans :</h2><h2  *ngIf="addedProduct">Plans : {{addedProduct}} plan Activated</h2>
+<div class="container m-1">
+    <div class="card-deck">
+        <div class="card mb-4 " type="button" (click)="onClick(' 1000')" (click)="onAdd()"
+            [ngStyle]="{'background-color':'#C9AE5D'}" *ngFor="let card of all_plans">
+            <div class="card-body bg-white text-white rounded shadow">
+                <div class="rounded p-1">
+                    <!-- <h6 class="card-title text-left pb-2">Bronze </h6> -->
+                    <p class="card-text text-center"><strong class="lg">{{card.plan_type}}&#8377;</strong></p>
+                    <p class="card-text"><small class="text-muted">{{card.ref_code}}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row" *ngIf="productSelected">
+    <div class="container">
+        <div class="col rounded shadow bg-white ">
+            <p class=" d " *ngIf="productSelected">{{addedProduct}} plan Activated</p>
+        </div>
+    </div>
+</div>
+<div class="row ">
+    <div class="container">
+        <nb-tabset >
+            <nb-tab tabTitle="Completed">
+                <div class="col-md-12 rounded shadow bg-white border p-3 text-left m-1">
+                    <nb-card size="tiny">
+                        <nb-card-header>Completed Users</nb-card-header>
+                        <nb-card-body >
+                            
+                                <table id="users" class="table tablr-responsive rounded border shadow">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>User</th>
+                                                <th>Phone</th>
+                                                <th>Plan Type</th>
+                                                <th>Date</th>
+                                            </tr>
+                                
+                                            <tr *ngFor="let row of myEarn">
+                                                <td>{{row._id}}</td>
+                                                <td>{{row.name}}</td>
+                                                <td>{{row.phone}}</td>
+                                                <td>{{row.plan_type}}</td>
+                                                <td>{{row.join_date | date:'dd-MM-yy'}}</td>
+                                            </tr>
+                                
+                                        </thead>
+                                </table>
+                            
+                        </nb-card-body>
+                    </nb-card>
+                </div>
+            </nb-tab>
+            <nb-tab tabTitle="Pending">
+                <div class="col-md-12 rounded shadow bg-white border p-3 text-left m-1">
+                    <nb-card size="tiny">
+                        <nb-card-header>Pending Users</nb-card-header>
+                        <nb-card-body>User One
+                            <hr>User Two
+                            <hr>User Three
+                        </nb-card-body>
+                    </nb-card>
+                </div>
+            </nb-tab>
+        </nb-tabset>
+
+    </div>
+</div>
+

@@ -1,0 +1,23 @@
+<h2>Transaction History </h2>
+<div class="table-responsive">
+    <table id="users" class="table rounded border shadow">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>User</th>
+                    <th>Refferal User</th>
+                    <th>Plan Type</th>
+                    <th>Date</th>
+                </tr>
+    
+                <tr *ngFor="let row of rows">
+                    <td>{{row.ID}}</td>
+                    <td>{{row.User1}}</td>
+                    <td>{{row.User2}}</td>
+                    <td>{{row.PlanAmount}}</td>
+                    <td>{{row.Date | date:'dd-MM-yy'}}</td>
+                </tr>
+    
+            </thead>
+    </table>
+</div>

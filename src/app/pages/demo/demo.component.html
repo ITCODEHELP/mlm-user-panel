@@ -1,0 +1,84 @@
+<h2>Plans : </h2>
+<div class="container m-1">
+    <div class="card-deck">
+        <div class="card mb-4" [ngClass]="enable1 ? 'active' : 'card'" (click)="selectedInput('1')" *ngFor="let card of all_plans">
+            <div class="card-body bg-white text-white rounded shadow">
+                <div class="rounded p-1" >
+                    <!-- <h6 class="card-title text-left pb-2">Bronze </h6> -->
+                    <p class="card-text text-center"><strong class="lg">{{card.plan_type}}&#8377;</strong></p>
+                    <p class="card-text"><small class="text-muted">{{card.ref_code}}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+<h2>Total Earning :</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <div class="card3 bg-white rounded shadow">
+                <!-- <img class="card-img-top" src="" alt=""> -->
+
+                <div class="card-body">
+                    <h5 class="card-title">Total Referred User</h5>
+                    <p class="card-text">
+                        <b>Total User : {{summarys?.total_user}}</b>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 mb-4" >
+            <div class="card3 bg-white rounded shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Total Earned Amount </h5>
+                    <p class="card-text">
+                        <b>Total Amount : {{summarys?.totalEarning}} </b>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<h2>Invite User :</h2>
+<div class="row m-4">
+    <div class="container ">
+        <div class=" bg-white shadow rounded p-3">
+            <div class="input1 ">
+                <input type="text" style="outline: none;" class="input rounded-pill"
+                    placeholder="Enter Whatsapp Number">
+
+                <button nbButton shape="round" class="m-3 p-3" size="small" status="success" (click)="onClick()"
+                    routerLink="/pages/miscellaneous/not-found">Share To Whatsapp</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<hr>
+<h2>Recently Added : </h2>
+<br>
+<div class="table-responsive">
+
+    <table id="users" class="table rounded border bg-light shadow">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Plan Type</th>
+                <th>Phone</th>
+                <th>Date</th>
+            </tr>
+
+            <tr *ngFor="let item of recent_user">
+                <td>{{item._id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.plan_type}}</td>
+                <td>{{item.phone}}</td>
+                <td>{{item.join_date}}</td>
+            </tr>
+        </thead>
+    </table>
+</div>

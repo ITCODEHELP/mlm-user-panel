@@ -1,0 +1,97 @@
+@import url(https://fonts.googleapis.com/css?family=Dosis:300,400);
+
+
+.card {
+    cursor: pointer;
+    display: block;
+    top: 0px;
+    position: relative;
+    max-width: 262px;
+    background-color: #f2f8f9;
+    border-radius: 4px;
+    padding: 32px 24px;
+    margin: 12px;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+    border: 1px solid #f2f8f9;
+  
+    &:hover {
+      transition: all 0.3s ease-out ;
+      box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+      top: -4px;
+      border: 1px solid #cccccc;
+      background-color: white;
+    }
+  
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: -20px;
+      right: -20px;
+      left: -227px;
+      background: #222b45;
+      height: 164px;
+      width: 159px;
+      border-radius: 32px;
+      transform: scale(-6);
+      transform-origin: 50% 50%;
+      transition: transform 0.3s ease-out ;
+    }
+  
+    &:hover:before {
+      transform: scale(2.15);
+    }
+   
+  }
+
+  
+  .card {
+    display: block;
+    top: 0px;
+    position: relative;
+    width: 600px;
+    border-radius: 4px;
+    padding: 32px 24px;
+    margin-left: 12px;
+    margin-right: 12px;
+    text-decoration: none;
+    overflow: hidden;
+    border: 1px solid #f2f8f9;
+    
+    .go-corner {
+      opacity: 0.7;
+    }   
+ }
+  .card-deck{
+    margin-right: 0px;
+  }
+  .card-text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+  }
+
+  .lg {
+    font-size: 45px;
+  }
+
+  
+  .card-row {
+    display: flex;
+    margin: 0 -0.5rem;
+  }
+  
+  .card-col {
+    flex: 1 0 calc(50% - 1rem);
+    margin: 0 0.5rem;
+  }
+  .d{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 3px 2px;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+  }
+  

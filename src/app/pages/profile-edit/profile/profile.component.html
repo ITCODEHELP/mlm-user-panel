@@ -1,0 +1,14 @@
+<nb-card class="card rounded">
+    <nb-card-header class="text-center">User Details</nb-card-header>
+    <nb-card-body>
+        <p>First Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :  {{profileData?.first_name}} </p><hr>
+        <p>Middle Name :  {{profileData?.middle_name}} </p><hr>
+        <p>Last Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :  {{profileData?.last_name}} </p><hr>
+        <p>Mobile No.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :  {{profileData?.phone}} </p><hr>
+        <p>Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :  {{profileData?.email}} </p><hr>
+        <p>Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :  {{profileData?.password}} </p><hr>
+        <p>Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :  {{profileData?.address}} </p><hr>
+        <p>Gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :  {{profileData?.gender}}</p><hr>
+        <a nbButton routerLink="update" >Edit</a>
+    </nb-card-body>
+  </nb-card>

@@ -1,0 +1,183 @@
+<h1 id="title" class="title">Register</h1>
+<p class="sub-title">Hello! Register with your Details.</p>
+
+<form
+  [formGroup]="registerData"
+  (ngSubmit)="register()"
+  #form="ngForm"
+  aria-labelledby="title"
+>
+
+  <!-- Referral code -->
+
+  <div class="form-control-group">
+    <label class="label" for="input-rcode">Referral Code:</label>
+    <input
+      nbInput
+      fullWidth
+      name="rcode"
+      formControlName="ref_code_applied"
+      placeholder="Referral Code"
+      fieldSize="large"
+      autofocus
+    />
+  </div>
+
+  <!-- First Name -->
+
+  <div class="form-control-group">
+    <label class="label" for="input-fname">First Name:</label>
+    <input
+      nbInput
+      fullWidth
+      required
+      name="fname"
+      formControlName="first_name"
+      placeholder="First Name"
+      fieldSize="large"
+      autofocus
+    />
+  </div>
+
+  <!-- Middle Name -->
+
+  <div class="form-control-group">
+    <label class="label" for="input-mname">Middle Name:</label>
+    <input
+      nbInput
+      fullWidth
+      required
+      name="mname"
+      formControlName="middle_name"
+      placeholder="Middle Name"
+      fieldSize="large"
+      autofocus
+    />
+  </div>
+
+  <!-- Last Name -->
+
+  <div class="form-control-group">
+    <label class="label" for="input-lname">Last Name:</label>
+    <input
+      nbInput
+      fullWidth
+      required
+      name="lname"
+      formControlName="last_name"
+      placeholder="Last Name"
+      fieldSize="large"
+      autofocus
+    />
+  </div>
+
+  <!-- Email Address -->
+
+  <div class="form-control-group">
+    <label class="label" for="input-email">Email Address:</label>
+    <input
+      nbInput
+      fullWidth
+      required
+      name="email"
+      formControlName="email"
+      placeholder="Email Address"
+      fieldSize="large"
+      autofocus
+    />
+  </div>
+
+  <!-- Mobile Number -->
+
+  <div class="form-control-group">
+    <label class="label" for="input-mobile">Mobile Number:</label>
+    <input
+      nbInput
+      fullWidth
+      required
+      name="mobile"
+      formControlName="phone"
+      placeholder="Mobile Number"
+      fieldSize="large"
+      autofocus
+    />
+  </div>
+
+  <!-- Password -->
+
+  <div class="form-control-group">
+    <span class="label-with-link">
+      <label class="label" for="input-password">Password:</label>
+    </span>
+    <input
+      nbInput
+      fullWidth
+      required
+      name="password"
+      formControlName="password"
+      type="password"
+      placeholder="Password"
+      fieldSize="large"
+    />
+  </div>
+
+  <!-- Full Address -->
+
+  <div class="form-control-group">
+    <span class="label-with-link">
+      <label class="label" for="input-address">Full Address:</label>
+    </span>
+    <input
+      nbInput
+      fullWidth
+      required
+      name="address"
+      formControlName="address"
+      type="text"
+      placeholder="Address"
+      fieldSize="large"
+    />
+  </div>
+
+  <!-- Gender & Plans -->
+
+  <div class="form-control-group">
+    <nb-select formControlName="gender" required>
+      <nb-option value="" selected disabled>Gender</nb-option>
+      <nb-option value="male">Male</nb-option>
+      <nb-option value="female">Female</nb-option>
+    </nb-select>
+    &nbsp;
+    <nb-select formControlName="plan_type" required >
+      <nb-option value="" selected disabled>All Plans</nb-option>
+      <nb-option value="1000">1000</nb-option>
+      <nb-option value="2000">2000</nb-option>
+      <nb-option value="3000">3000</nb-option>
+      <nb-option value="4000">4000</nb-option>
+      <nb-option value="5000">5000</nb-option>
+    </nb-select>
+  </div>
+
+  <div class="form-control-group accept-group">
+    <nb-checkbox name="terms" required >
+      I Agree to
+      <a href="#" target="_blank"><strong>Terms & Conditions</strong></a>
+    </nb-checkbox>
+  </div>
+
+  <br />
+  <button
+    nbButton
+    fullWidth
+    status="primary"
+    size="large"
+    [disabled]="submitted || !form.valid"
+    [class.btn-pulse]="submitted"
+  >
+    Register
+  </button>
+</form>
+
+<section class="another-action" aria-label="Sign in">
+  Already have an account? <a class="text-link" routerLink="../login">Log in</a>
+</section>
